@@ -1,0 +1,21 @@
+oferta_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: OfertaBundle:Default:index }
+
+pagina_ayuda:
+    path:      /ayuda
+    defaults: { _controller: OfertaBundle:Default:ayuda }
+
+pagina_estatica:
+    path: /sitio/{pagina}
+    defaults: { _controller: OfertaBundle:Sitio:estatica }
+
+paginas_estaticas111:
+    resource: routing_paginas.yml
+    prefix: /pagina
+    defaults: { _controller: FrameworkBundle:Template:template }
+
+
+_pagina_estatica:
+    path: /sitio/{pagina}/
+    defaults: { _controller: FrameworkBundle:Redirect:redirect,route: pagina_estatica }
